@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 	<title>Siri Manual</title>
 <style>
-@media not all and (hover){
+/*@media not all and (hover){*/
 /*phone screen*/
+@media (hover) and (min-width: 0px) {
 	body{
 		background-color: #141013;
 		color: white;
 		display: grid;
 		font-family: Helvetica;
 		font-weight: normal;
-  		grid-template-columns: auto 350px;
+  		grid-template-columns: auto;
   		grid-template-rows: repeat(6, 700px); 
-  		grid-gap: 0.8em;
+  		grid-gap: 0.3em;
   		font-size:19px;
 	}
 	.center-justify{
@@ -67,7 +68,7 @@
 		height: 40%;
 	}
 }
-@media(hover) and (min-width: 0px){
+@media(hover) and (min-width: 1000px){
 /*computer screen*/
 	body{
 		background-color: #141013;
@@ -144,7 +145,7 @@
 }
 </style>
 <body>
-	<img id = "image1" src="manual/gifs/siri.gif"></img>
+	<img id = "image1" src="gifs/siri.gif"></img>
 	<div id = "smooth" class="title">Siri</div>
 	<div id="left1" class="right-justify1">
 		Press home button to
