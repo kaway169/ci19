@@ -1,26 +1,55 @@
+
 #cursor {
-  animation: blinker 1s step-end infinite; 
+  animation: blinker 1s linear infinite; 
   /*you can change 'step-end' to 'linear' for smooth transition*/
 }
 @keyframes blinker {  
   50% { opacity: 0; }
 }
-
-@import url('https://fonts.googleapis.com/css?family=Space+Mono');
-body {
-        font-family: 'Space Mono', monospace;
-        font-size: 72px;
-        line-height: 1em;
+#container {
+  animation-name: color1;
+  animation-duration: 5s;
+}
+@keyframes color1 {  
+  from {background-color: white;}
+  to {background-color: black;}
+}
+#english {
+  animation-name: color2;
+  animation-duration: 5s;
+}
+@keyframes color2 {  
+  from {background-color: white;}
+  to {background-color: blue;}
 }
 
+
+@import url(<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">);
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 90px;
+    line-height: 1.5em;
+    color: white;
+    /*background-color: gray;*/
+    display: flex;
+  }
 #container {
-  background-color: #efefef;
-  width: 1000px;
+  width: 500px;
   padding: 50px;
-  margin: 50px auto;
+  background-color: black;
+  margin: 20px auto;
   word-wrap: break-word;
-  text-align:center;
+  text-align: center;
+}
+#english {
+  font-family: Georgia;
+  width: 500px;
+  padding: 50px;
+  background-color: blue;
+  margin: 20px auto;
+  word-wrap: break-word;
+  text-align: center;
 }
 .inner {
-  /*display:block;*/
+ /* display:block;*/
 }
