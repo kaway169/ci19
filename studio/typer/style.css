@@ -6,7 +6,7 @@
 @keyframes blinker {  
   50% { opacity: 0; }
 }
-#container {
+#body {
   animation-name: color1;
   animation-duration: 5s;
 }
@@ -14,39 +14,29 @@
   from {background-color: white;}
   to {background-color: black;}
 }
-#english {
-  animation-name: color2;
-  animation-duration: 5s;
-}
-@keyframes color2 {  
-  from {background-color: white;}
-  to {background-color: blue;}
-}
-
 
 @import url(<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">);
   body {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 90px;
-    line-height: 1.5em;
-    color: white;
-    /*background-color: gray;*/
+    line-height: 1em;
+    background-color: black;
     display: flex;
   }
 #container {
-  width: 500px;
-  padding: 50px;
-  background-color: black;
-  margin: 20px auto;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  color: yellow;
   word-wrap: break-word;
   text-align: center;
 }
 #english {
-  font-family: Georgia;
-  width: 500px;
-  padding: 50px;
-  background-color: blue;
-  margin: 20px auto;
+  /*font-family: Monospace;*/
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  color: aqua;
   word-wrap: break-word;
   text-align: center;
 }

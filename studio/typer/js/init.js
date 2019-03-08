@@ -23,7 +23,7 @@ $(document).ready(function() {
     if (e.which == 8){
       e.preventDefault();
       entryCount ++;
-      console.log("entry #" + entryCount + " : " + e.which + " | BKSP" );
+      console.log("entry #" + entryCount + " : " + e.which + " | BKSP " );
       deleteElement();
     }
   });
