@@ -32,7 +32,6 @@
   text-align: center;
 }
 #english {
-  /*font-family: Monospace;*/
   width: 50%;
   padding: 0;
   margin: 0;
@@ -41,5 +40,4 @@
   text-align: center;
 }
 .inner {
- /* display:block;*/
 }
