@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+html,body{
+	background-color: #fbcab4;
+	font-family: helvetica;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.filterDiv {
+  float: left;
+  background-color: #ec956c;
+  color: black;
+  width: 200px;
+  line-height: 80px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f9906f;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #da9970;
+}
+
+.btn.active {
+  background-color: #ffe6cf;
+  color: black;
+}
+</style>
+<body>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('Asian American')"> Asian American</button>
+  <button class="btn" onclick="filterSelection('African American')"> African American</button>
+  <button class="btn" onclick="filterSelection('Caucasian American')"> Caucasian American</button>
+  <button class="btn" onclick="filterSelection('Hispanic/ Latino American')"> Hispanic/ Latino American</button>
+</div>
+
+<div class="container">
+  <div class="filterDiv Asian American">Ai-Ling Lee</div>
+  <div class="filterDiv African American">Don Shirley</div>
+  <div class="filterDiv Caucasian American">Bradley Cooper</div>
+  <div class="filterDiv Caucasian American">Lady Gaga</div>
+  <div class="filterDiv Hispanic/ Latino American">Yalitza Aparicio</div>
+</div>
+<script>
+	filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</body>
+</html>
