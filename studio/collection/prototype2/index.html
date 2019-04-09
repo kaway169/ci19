@@ -5,7 +5,6 @@
 </head>
 <style>
 html,body{
-	background-color: #ffe6cf;
 	font-family: helvetica;
 }
 
@@ -15,7 +14,7 @@ html,body{
 
 .filterDiv {
   float: left;
-  background-color: #ec956c;
+/*  background-color: black;*/
   color: black;
   width: 200px;
   line-height: 80px;
@@ -48,32 +47,133 @@ html,body{
 </style>
 <body>
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('Asian American')"> Asian American</button>
-  <button class="btn" onclick="filterSelection('African American')"> African American</button>
-  <button class="btn" onclick="filterSelection('Caucasian American')"> Caucasian American</button>
-  <button class="btn" onclick="filterSelection('Hispanic/ Latino American')"> Hispanic/ Latino American</button>
+<!--   <button class="btn active" onclick="filterSelection('all')"> Show all</button> -->
+    <button class="btn" id="showAll" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" id ="asianAmerican" onclick="filterSelection('Asian American')"> Asian American</button>
+  <button class="btn" id ="caucasianAmerican" onclick="filterSelection('Caucasian American')"> Caucasian American</button>
 </div>
 
 <div class="container">
-  <div class="filterDiv Asian American">Ai-Ling Lee</div>
-  <div class="filterDiv African American">Don Shirley</div>
-  <div class="filterDiv Caucasian American">Bradley Cooper</div>
-  <div class="filterDiv Caucasian American">Lady Gaga</div>
-  <div class="filterDiv Hispanic/ Latino American">Yalitza Aparicio</div>
+  <div class="filterDiv Asian American"></div>
+  <div class="filterDiv Caucasian American"></div>
 </div>
+
 <script>
-	filterSelection("all")
+var url = "https://raw.githubusercontent.com/kaway169/Core-Interaction/master/classwork/10/mydataall.json";
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){sortData(json);})
+  // .then(function(json){ buildPage(json); })
+
+
+function sortData(json){
+  // console.log(json);
+  var array = json;
+  var nominee = json[0].nominee;
+  
+  console.log(array);
+
+  var ethnicity = document.createElement("div");
+  document.body.appendChild(ethnicity);
+  ethnicity.style.postion = "absolute";
+
+// NOMINEE AS DIVS
+  for(var i = 0; i < json.length; i = i += 1){
+    var nominee = document.createElement("div");
+    nominee.setAttribute("id", json[i].nominee)
+    document.body.appendChild(nominee);
+    nominee.innerHTML = json[i].nominee;
+    console.log(json[i].nominee);
+  }
+
+  var c = array.filter(function(el){ return el.nominee == "caucasianAmerican"; });
+  var a = array.filter(function(entry){ return entry.ethnicity == "asianAmerican"; });
+
+
+var currentFilter = "showAll";
+
+
+//EVENT LISTENER FOR BUTTONS
+var btnArray = document.getElementsByClassName('btn');
+console.log(btnArray);
+
+for(var i = 0; i < btnArray.length; i++) {
+	var el = btnArray[i];
+	el.addEventListener('click', function(e){
+		var id = e.srcElement.id;
+		currentFilter=id;
+
+		changeButtonsToOGColor();
+		var clickedElement = document.getElementById(id);
+		console.log(clickedElement);
+		clickedElement.style.backgroundColor = "white";
+
+		parseThruArray(id);
+
+	});
+}
+
+//ON CLICK CHANGE STYLE OF BUTTONS
+
+function changeButtonsToOGColor() {
+	for(var i = 0; i < btnArray.length; i++) {
+		var el = btnArray[i];
+		console.log(el);
+		el.style.backgroundColor = "red";
+	}
+}
+
+function parseThruArray(currentFilter) {
+	for(var i = 0; i < data.length; i++) {
+		var obj = data[i];
+		var ethnicty = obj.ethnicty;
+		var ethnictyVar;
+
+		if(ethnicty == "asianAmerican") {
+			ethnictyVar = "asianAmerican";
+
+		}
+
+		if(ethnicty == currentFilter) {
+			//apply some styles here
+			//display inline block
+		} else {
+			//display none;
+			//some styles
+		}
+	}
+}
+
+//asianAmerican
+//
+
+filterSelection("all")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
+    var asianAmerican = array.filter(function(entry){ return entry.ethnicity == "asianAmerican"; });
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
+
+// function getDivChildren(containerId, elementsId) {
+//     var div = document.getElementById(containerId),
+//         subDiv = div.getElementsByTagName('div'),
+//         myArray = [];
+
+//     for(var i = 0; i < subDiv.length; i++) {
+//         var elem = subDiv[i];
+//         if(elem.id.indexOf(elementsId) === 0) {
+//             myArray.push(elem.id);
+//         }
+//     }
+//     return myArray;
+// }
+// console.log(getDivChildren('test', 'test-'));
 
 // Show filtered elements
 function w3AddClass(element, name) {
@@ -106,9 +206,10 @@ var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+    current[0].className = current[0].className.replace("active", "");
+    this.className += "active";
   });
+}
 }
 </script>
 </body>
