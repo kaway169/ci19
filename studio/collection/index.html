@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Collection</title>
+</head>
+<style>
+h2{
+	margin: 0;
+	color: black;
+	font-family: helvetica;
+	font-size: 20pt;
+	width: 400px;
+}
+div{
+	display:flex;
+	color: black;
+	font-family: monospace;
+	font-size: 12pt;
+	padding: 1px 3px;
+	font-weight: regular;
+	float: left; 
+	width: 50%;
+
+}
+div:hover{
+	background-color: pink;
+	color: white;
+}
+.myBtnContainer{
+	padding: 15px 32px;
+}
+.hover-image{
+	position: absolute;
+	z-index: 4;
+	top: 30vh;
+	left: 60vw;
+	height: 300px;
+	border:solid thick red
+}
+</style>
+<body>
+<h2>1st - 91st Academy Awards Catalog</h2>
+<div id="myBtnContainer">
+  <button id ="showAll" class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button id = "asianAmerican" class="btn" onclick="filterSelection('asianAmerican')">Asian American</button>
+  <button id = "caucasianAmerican" class="btn" onclick="filterSelection('caucasianAmerican')">Caucasian American</button>
+  <button  id = "year" class="btn" onclick="filterSelection('year')">Year</button>
+  <button id = "movie" class="btn" onclick="filterSelection('movie')">Movie</button>
+</div>
+<img id="actor-photo" class="hover-image">
+
+<!-- <div class="container">
+  <div class="filterDiv asianAmerican"></div>
+  <div class="filterDiv caucasianAmerican"></div>
+</div>
+ -->
+<script>
+var url = "https://raw.githubusercontent.com/kaway169/ci19/master/studio/collection/prototype2/mydata1.json";
+
+fetch(url)
+	.then(function(response){return response.json();})
+	.then(function(json){ buildPage1(json); })
+
+function buildPage1(data) {
+
+	for(var i = 0; i < data.length; i = i + 1){
+		var raceDiv = document.createElement("div");
+		raceDiv.classList.add("aMovieEntry");
+		raceDiv.classList.add("asianAmerican");
+
+		var year = document.createElement("div");
+		year.className = "year";
+		var award = document.createElement("div");
+		award.className = "award";
+		var asianAmerican = document.createElement("div");
+		asianAmerican.className = "actor";
+		var movie = document.createElement("div");
+		movie.className = "movie";
+
+		raceDiv.appendChild(year);
+		raceDiv.appendChild(award);
+		raceDiv.appendChild(asianAmerican);
+		raceDiv.appendChild(movie);
+		document.body.appendChild(raceDiv);
+//IMAGE
+		(function(index){
+			raceDiv.onmouseover = function(event) {
+				console.log('show gif', data[index].image);
+				document.getElementById("actor-photo").src = data[index].image;
+			}
+		})(i);
+
+//SCROLL
+const offsetFromTop = window.innerHeight/2; 
+// number of pixels of the widget should be from top of the window
+const updateFrequency= 50; 
+//milisecond, smaller the value, smooth the animation.
+const chaseFactor = .05; 
+// the closing-in factor, smaller makes it smoother.
+
+const movingBox = document .getElementById("actor-photo");
+movingBox.style.position="absolute";
+
+let yMoveTo=0;
+let yDiff=0;
+
+const moveIt = (() => {
+    // distance user scrolled
+    yDiff = (yMoveTo - window.pageYOffset);
+
+    if ( Math.abs(yDiff) > 9) {
+        // turn off now, prevent event repeat firing when user kept scrolling
+        window.removeEventListener("scroll", moveIt);
+
+        yMoveTo -= yDiff*chaseFactor;
+        movingBox.style.top  = (yMoveTo+offsetFromTop).toString() + "px" ;
+        setTimeout(moveIt, updateFrequency); // calls itself again
+    } else {
+        window.addEventListener("scroll", moveIt , false); // turn back on
+    }
+});
+
+
+window.addEventListener("scroll", moveIt , false);
+
+		year.innerHTML = data[i].year;
+		award.innerHTML = data[i].award;
+		asianAmerican.innerHTML = data[i].asianAmerican;
+		movie.innerHTML = data[i].movie;
+
+		if(data[i].asianAmerican == "Mako Iwamatsu","Haing S. Ngor"){
+			asianAmerican.style.color = "red";
+			asianAmerican.style.fontWeight = "bold";
+
+		}
+		// if(data[i].award == "Actor in a Supporting Role"){
+		// 	award.style.color = "blue";
+		// }
+
+		// var line = document.createElement("hr");
+		// document.body.appendChild(line);
+	}
+
+var url = "https://raw.githubusercontent.com/kaway169/ci19/master/studio/collection/prototype2/mydata2.json";
+
+fetch(url)
+	.then(function(response){return response.json();})
+	.then(function(json){ buildPage2(json); })
+
+function buildPage2(data) {
+	for(var i = 0; i < data.length; i = i + 1){
+
+		var raceDiv = document.createElement("div");
+		raceDiv.classList.add("aMovieEntry");
+		raceDiv.classList.add("caucasianAmerican");
+
+		var year = document.createElement("div");
+		year.className = "year";
+
+		var award = document.createElement("div");
+		award.className = "award";
+
+		var caucasianAmerican = document.createElement("div");
+		// caucasianAmerican.className = "caucasianAmerican";
+		caucasianAmerican.className = "actor";
+		var movie = document.createElement("div");
+		movie.className = "movie";
+
+
+		raceDiv.appendChild(year);
+		raceDiv.appendChild(award);
+		raceDiv.appendChild(caucasianAmerican);
+		raceDiv.appendChild(movie);
+
+		document.body.appendChild(raceDiv);
+//IMAGE
+		(function(index){
+			raceDiv.onmouseover = function(event) {
+				console.log('show gif', data[index].image);
+				document.getElementById("actor-photo").src = data[index].image;
+			}
+		})(i);
+
+//SCROLL
+const offsetFromTop = window.innerHeight/2; // number of pixels of the widget should be from top of the window
+const updateFrequency= 50; //milisecond. The smaller the value, smooth the animation.
+const chaseFactor = .05; // the closing-in factor. Smaller makes it smoother.
+
+const movingBox = document .getElementById("actor-photo");
+movingBox.style.position="absolute";
+
+let yMoveTo=0;
+let yDiff=0;
+
+const moveIt = (() => {
+    // distance user has scrolled
+    yDiff = (yMoveTo - window.pageYOffset);
+
+    if ( Math.abs(yDiff) > 9) {
+        // turn off now, avoid event repeat firing when user kept scrolling
+        window.removeEventListener("scroll", moveIt);
+
+        yMoveTo -= yDiff*chaseFactor;
+        movingBox.style.top  = (yMoveTo+offsetFromTop).toString() + "px" ;
+        setTimeout(moveIt, updateFrequency); // calls itself again
+    } else {
+        window.addEventListener("scroll", moveIt , false); // turn back on
+    }
+});
+window.addEventListener("scroll", moveIt , false);
+
+		year.innerHTML = data[i].year;
+		award.innerHTML = data[i].award;
+		caucasianAmerican.innerHTML = data[i].caucasianAmerican;
+		movie.innerHTML = data[i].movie;
+
+		if(data[i].caucasianAmerican == "Richard Barthelmess","Warner Baxter"){
+			caucasianAmerican.style.color = "blue";
+			caucasianAmerican.style.fontWeight = "bold";
+		}
+
+		// var line = document.createElement("hr");
+		// document.body.appendChild(line);
+
+	}
+
+//EVENT LISTENERS
+document.getElementById('showAll').addEventListener('click', function(e){
+	var allArray = document.getElementsByClassName('aMovieEntry');
+	//loop thru and set display to none
+	for(var i = 0; i < allArray.length; i++) {
+		var el = allArray[i];
+		el.style.display = "inline-block";
+	}
+});
+
+document.getElementById('asianAmerican').addEventListener('click', function(e){
+	// filterSelection(e);
+	var allArray = document.getElementsByClassName('aMovieEntry');
+	//loop thru and set display to none
+	for(var i = 0; i < allArray.length; i++) {
+		var el = allArray[i];
+		el.style.display = "none";
+	}
+
+	var asianAmericanArray = document.getElementsByClassName('asianAmerican');
+	//loop thru and set disdplay inline block 
+	for(var i = 0; i < asianAmericanArray.length; i++) {
+		var el = asianAmericanArray[i];
+		el.style.display = "inline-block";
+	}
+
+
+	console.log(array);
+});
+
+document.getElementById('caucasianAmerican').addEventListener('click', function(e){
+	// filterSelection(e);
+	var allArray = document.getElementsByClassName('aMovieEntry');
+	//loop thru and set display to none
+	for(var i = 0; i < allArray.length; i++) {
+		var el = allArray[i];
+		el.style.display = "none";
+	}
+
+	var caucasianAmericanArray = document.getElementsByClassName('caucasianAmerican');
+	//loop thru and set disdplay inline block 
+	for(var i = 0; i < caucasianAmericanArray.length; i++) {
+		var el = caucasianAmericanArray[i];
+		el.style.display = "inline-block";
+	}
+
+
+	console.log(array);
+});
+
+//YEAR 
+document.getElementById('year').addEventListener('click', function(e){
+	console.log('year')
+	//get all year elem,ents
+	//change some stykle, color, font
+
+	var yearArray = document.getElementsByClassName('year');
+	for(var i = 0; i < yearArray.length; i++) {
+		var el = yearArray[i];
+		el.style.color = "orange";
+	}
+});
+
+//MOVIE
+document.getElementById('movie').addEventListener('click', function(e){
+	console.log('movie')
+	//get all year elem,ents
+	//change some stykle, color, font
+
+	var movieArray = document.getElementsByClassName('movie');
+	for(var i = 0; i < movieArray.length; i++) {
+		var el = movieArray[i];
+		el.style.color = "purple";
+	}
+});
+
+//FILTER FUNCTION
+function filterSelection(c) {
+console.log('hellooooo')
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+
+  console.log(x);
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+}
+}
+</script>
+</body>
+</html>
