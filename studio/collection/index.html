@@ -7,28 +7,40 @@
 h2{
 	margin: 0;
 	color: black;
-	font-family: helvetica;
+	font-family: monospace;
 	font-size: 20pt;
 	width: 400px;
 	padding-bottom: 10px;
 }
 div{
+	text-align: center;
 	display:flex;
 	color: black;
 	font-family: monospace;
 	font-size: 12pt;
-	padding: 1px 3px;
+	padding-right: 10px;
+	padding-bottom: 5px;
 	font-weight: regular;
 	float: left; 
-	width: 50%;
-
+	width: 100%;
 }
 .btn:hover{
- text-decoration: underline;
- color: black;
+	text-decoration: underline;
+	color: black;
 }
-
+.aMovieEntry:hover{
+	background-color: #98FB98;
+}
+h2:hover{
+	text-decoration: underline;
+	color: black;
+}
 .btn {
+	font-family: monospace;
+	position: relative;
+	z-index: 4;
+	top: -9vh;
+	left: 57vw;
 	font-size: 15px;
 	border: none;
 	outline: thin;
@@ -36,32 +48,27 @@ div{
 	background-color: none;
 	cursor: pointer;
 }
-}
 .hover-image{
 	position: absolute;
 	z-index: 4;
-	top: 30vh;
-	left: 60vw;
-	height: 300px;
-	border:solid thick red;
+	top: 20vh;
+	left: 5vw;
+	width: 250px;
+	border:solid thick black;
 }
 </style>
 <body>
 <h2>1st - 91st Academy Awards Catalog</h2>
+<hr>
 <div id="myBtnContainer">
   <button id ="showAll" class="btn active" onclick="filterSelection('all')"> Show all</button>
+   <button id = "caucasianAmerican" class="btn" onclick="filterSelection('caucasianAmerican')">Caucasian American</button>
   <button id = "asianAmerican" class="btn" onclick="filterSelection('asianAmerican')">Asian American</button>
-  <button id = "caucasianAmerican" class="btn" onclick="filterSelection('caucasianAmerican')">Caucasian American</button>
   <button  id = "year" class="btn" onclick="filterSelection('year')">Year</button>
   <button id = "movie" class="btn" onclick="filterSelection('movie')">Movie</button>
 </div>
 <img id="actor-photo" class="hover-image">
 
-<!-- <div class="container">
-  <div class="filterDiv asianAmerican"></div>
-  <div class="filterDiv caucasianAmerican"></div>
-</div>
- -->
 <script>
 var url = "https://raw.githubusercontent.com/kaway169/ci19/master/studio/collection/mydata1.json";
 
@@ -123,7 +130,8 @@ const moveIt = (() => {
         yMoveTo -= yDiff*chaseFactor;
         movingBox.style.top  = (yMoveTo+offsetFromTop).toString() + "px" ;
         setTimeout(moveIt, updateFrequency); // calls itself again
-    } else {
+    } 
+    else {
         window.addEventListener("scroll", moveIt , false); // turn back on
     }
 });
@@ -137,17 +145,12 @@ window.addEventListener("scroll", moveIt , false);
 		movie.innerHTML = data[i].movie;
 
 		if(data[i].asianAmerican == "Mako Iwamatsu","Haing S. Ngor"){
-			asianAmerican.style.color = "red";
+			// asianAmerican.style.color = "red";
 			asianAmerican.style.fontWeight = "bold";
 
 		}
-		// if(data[i].award == "Actor in a Supporting Role"){
-		// 	award.style.color = "blue";
-		// }
 
-		// var line = document.createElement("hr");
-		// document.body.appendChild(line);
-	}
+}
 
 var url = "https://raw.githubusercontent.com/kaway169/ci19/master/studio/collection/mydata2.json";
 
@@ -190,9 +193,12 @@ function buildPage2(data) {
 		})(i);
 
 //SCROLL
-const offsetFromTop = window.innerHeight/2; // number of pixels of the widget should be from top of the window
-const updateFrequency= 50; //milisecond. The smaller the value, smooth the animation.
-const chaseFactor = .05; // the closing-in factor. Smaller makes it smoother.
+const offsetFromTop = window.innerHeight/2; 
+// number of pixels of the widget should be from top of the window
+const updateFrequency= 50; 
+//milisecond. The smaller the value, smooth the animation.
+const chaseFactor = .05; 
+// Smaller makes it smoother.
 
 const movingBox = document .getElementById("actor-photo");
 movingBox.style.position="absolute";
@@ -205,14 +211,17 @@ const moveIt = (() => {
     yDiff = (yMoveTo - window.pageYOffset);
 
     if ( Math.abs(yDiff) > 9) {
-        // turn off now, avoid event repeat firing when user kept scrolling
+        // turn off now - avoid event repeat firing when user kept scrolling
         window.removeEventListener("scroll", moveIt);
 
         yMoveTo -= yDiff*chaseFactor;
         movingBox.style.top  = (yMoveTo+offsetFromTop).toString() + "px" ;
-        setTimeout(moveIt, updateFrequency); // calls itself again
-    } else {
-        window.addEventListener("scroll", moveIt , false); // turn back on
+        setTimeout(moveIt, updateFrequency); 
+        // calls itself again
+    } 
+    else {
+        window.addEventListener("scroll", moveIt , false); 
+        // turn back on
     }
 });
 window.addEventListener("scroll", moveIt , false);
@@ -223,14 +232,14 @@ window.addEventListener("scroll", moveIt , false);
 		movie.innerHTML = data[i].movie;
 
 		if(data[i].caucasianAmerican == "Richard Barthelmess","Warner Baxter"){
-			caucasianAmerican.style.color = "blue";
+			// caucasianAmerican.style.color = "blue";
 			caucasianAmerican.style.fontWeight = "bold";
 		}
 
 		// var line = document.createElement("hr");
 		// document.body.appendChild(line);
 
-	}
+}
 
 //EVENT LISTENERS
 document.getElementById('showAll').addEventListener('click', function(e){
@@ -238,7 +247,7 @@ document.getElementById('showAll').addEventListener('click', function(e){
 	//loop thru and set display to none
 	for(var i = 0; i < allArray.length; i++) {
 		var el = allArray[i];
-		el.style.display = "inline-block";
+		el.style.display = "flex";
 	}
 });
 
@@ -255,7 +264,7 @@ document.getElementById('asianAmerican').addEventListener('click', function(e){
 	//loop thru and set disdplay inline block 
 	for(var i = 0; i < asianAmericanArray.length; i++) {
 		var el = asianAmericanArray[i];
-		el.style.display = "inline-block";
+		el.style.display = "flex";
 	}
 
 
@@ -275,9 +284,8 @@ document.getElementById('caucasianAmerican').addEventListener('click', function(
 	//loop thru and set disdplay inline block 
 	for(var i = 0; i < caucasianAmericanArray.length; i++) {
 		var el = caucasianAmericanArray[i];
-		el.style.display = "inline-block";
+		el.style.display = "flex";
 	}
-
 
 	console.log(array);
 });
@@ -285,13 +293,20 @@ document.getElementById('caucasianAmerican').addEventListener('click', function(
 //YEAR 
 document.getElementById('year').addEventListener('click', function(e){
 	console.log('year')
-	//get all year elem,ents
-	//change some stykle, color, font
+	//get all year elements
+	//change some style, color, font
+
+	var allArray = document.getElementsByClassName('aMovieEntry');
+	//loop thru and set display to none
+	for(var i = 0; i < allArray.length; i++) {
+		var el = allArray[i];
+		el.style.fontWeight = "none";
+	}
 
 	var yearArray = document.getElementsByClassName('year');
 	for(var i = 0; i < yearArray.length; i++) {
 		var el = yearArray[i];
-		el.style.color = "orange";
+		el.style.fontWeight = "bold";
 	}
 });
 
@@ -300,11 +315,17 @@ document.getElementById('movie').addEventListener('click', function(e){
 	console.log('movie')
 	//get all year elem,ents
 	//change some stykle, color, font
+	var allArray = document.getElementsByClassName('aMovieEntry');
+	//loop thru and set display to none
+	for(var i = 0; i < allArray.length; i++) {
+		var el = allArray[i];
+		el.style.fontWeight = "none";
+	}
 
 	var movieArray = document.getElementsByClassName('movie');
 	for(var i = 0; i < movieArray.length; i++) {
 		var el = movieArray[i];
-		el.style.color = "purple";
+		el.style.fontWeight = "bold";
 	}
 });
 
