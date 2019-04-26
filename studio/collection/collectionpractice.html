@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+var url = "https://raw.githubusercontent.com/kaway169/Core-Interaction/master/classwork/10/mydataall.json";
+// fetch(url)
+// 	.then(function(response){return response.json();})
+// 	.then(function(json){sortData(json);})
+// 	// .then(function(value, index, self){onlyUnique(value, index, self);})
+// 	// .then(function(json){ buildPage(json); })
+
+
+// function sortData(json){
+// 	// console.log(json);
+// 	var array = json;
+// 	var nominee = json[0].nominee;
+	
+// 	console.log(array);
+
+// 	var ethnicity = document.createElement("div");
+// 	document.body.appendChild(ethnicity);
+// 	ethnicity.style.postion = "absolute";
+
+// // NOMINEE AS DIVS
+// 	for(var i = 0; i < json.length; i = i += 1){
+// 		var nominee = document.createElement("div");
+// 		nominee.setAttribute("id", json[i].nominee)
+// 		document.body.appendChild(nominee)
+// 		nominee.innerHTML = json[i].nominee;
+// 		console.log(json[i].nominee);
+// 		// document.getElementById("nominee").appendChild(nominee).setAttribute("class", className);
+// 	}
+
+// 	var c = array.filter(function(el){ return el.ethnicity == "caucasianAmerican"; });
+// 	var a = array.filter(function(entry){ return entry.ethnicity == "asianAmerican"; });
+	
+// 	// console.log(a);
+// 	document.write(obj.nominee)
+
+// }
+
+fetch(url)
+	.then(function(data){return data.json();})
+	.then(function(json){sortData(json);})
+function sortData(json){
+	// console.log(json);
+	var array = json;
+
+	console.log(array);
+
+
+	var ethnicity = document.createElement("div");
+	document.body.appendChild(ethnicity);
+	ethnicity.style.postion = "absolute";
+
+	//cali is going to be an array
+	//on each element ask .state == "California"
+	var asianAmerican = array.filter(function(el){ return el.ethnicity == "asianAmerican"; });
+	var caucasianAmerican = array.filter(function(entry){ return entry.ethnicity == "caucasianAmerican"; });
+	// var asianAmerican = array.filter(function(a){ return a.population > 10000; });
+
+	console.log(asianAmerican);
+	console.log(caucasianAmerican);
+
+
+//NOMINEE AS DIVS
+	// for(var i = 0; i < json.length; i = i += 1){
+	// 	var nominee = document.createElement("div");
+	// 	nominee.setAttribute("id", json[i].nominee)
+	// 	document.body.appendChild(nominee);
+	// 	nominee.innerHTML = json[i].nominee;
+	// 	console.log(json[i].nominee);
+	// }
+
+
+}
+</script>
+</body>
+</html>

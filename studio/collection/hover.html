@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+.theImage{
+	z-index: 0;
+	display: flex;
+	width: 20vmin;
+	height: 10vmin;
+	top: 30vh;
+	left: 60vw;
+
+}
+</style>
+<body>
+	<div id = "container">
+		<div id = "nominee"></div>
+	</div>
+<script>
+var url = "https://raw.githubusercontent.com/kaway169/ci19/master/studio/collection/prototype2/mydata2.json";
+fetch(url)
+	.then(function(response){return response.json();})
+	.then(function(json){displayimage(json);})	
+
+function displayimage(json){
+	var array = json;
+	var caucasianAmerican = json[0].caucasianAmerican;
+	
+	var image = document.createElement("img");
+	image.id = 'theImage'
+	document.body.appendChild(image);
+
+	for(var i = 0; i < array.length; i += 1){
+		//make container div
+		//append caucasianAmerican to container div
+		//append container div to body 
+		//put some marging on the container div 
+		var caucasianAmerican = document.createElement("div");
+
+		caucasianAmerican.innerHTML = json[i].caucasianAmerican;
+		caucasianAmerican.counter = i;
+		document.body.appendChild(caucasianAmerican);
+
+		var url = json[i].image;
+		caucasianAmerican.id = url;
+
+
+		caucasianAmerican.onmouseover = function(event) {
+			console.log('show gif');
+
+			var theUrl = event.srcElement.id;
+
+			var theImage = document.getElementById('theImage');
+
+			theImage.src = theUrl;
+	}
+
+}
+}
+
+</script>
+</body>
+</html>
