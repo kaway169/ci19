@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+ body {
+   margin: 0px;
+   overflow: hidden;
+ }
+canvas {
+  width: 100%;
+  height: 100%;
+}
+button {
+  color: white;
+  font-family: monospace;
+/*  top: 0;
+  left: 0;*/
+  position: absolute;
+  font-size: 15px;
+  border: none;
+  padding: 12px 16px;
+  background-color: transparent;
+  cursor: pointer;
+  display: table;
+}
+</style>
+<body>
+  <div id= "row1">
+  <button type="button" class="column">Armenia</button>
+  <button type="button" class="column">Bahrain البحرين</button>
+  <button type="button" class="column">Botswana</button>
+  <button type="button" class="column">Cameroun</button>
+  <button type="button" class="column">République Centrafricaine</button>
+  <button type="button" class="column">Côte d'Ivoire</button>
+  <button type="button" class="column">Egypt مصر</button>
+  <button type="button" class="column">Guinea-Bissau</button>
+  <button type="button" class="column">Guinée</button>
+  <button type="button" class="column">Guinée Equatoriale</button>
+  <button type="button" class="column">India</button>
+  <button type="button" class="column">Israel</button>
+  <button type="button" class="column">Jordan الأردن</button>
+  <button type="button" class="column">Kenya</button>
+  <button type="button" class="column">Kuwait الكويت</button>
+  <button type="button" class="column">Madagascar</button>
+  <button type="button" class="column">Mali</button>
+  <button type="button" class="column">Maroc</button>
+  <button type="button" class="column">Maurice</button>
+  <button type="button" class="column">Mozambique</button>
+  <button type="button" class="column">Niger</button>
+  <button type="button" class="column">Nigeria</button>
+  <button type="button" class="column">Oman عُمان</button>
+  <button type="button" class="column">Qatar قطر</button>
+  <button type="button" class="column">Saudi Arabia المملكة العربية السعودية</button>
+  <button type="button" class="column">Sénégal</button>
+  <button type="button" class="column">South Africa</button>
+  <button type="button" class="column">Tunisie</button>
+  <button type="button" class="column">Uganda</button>
+  <button type="button" class="column">United Arab Emirates الإمارات العربية المتحدة</button>
+</div>
+
+<div id= "row2">
+  <button type="button" class="column">Australia</button>
+  <button type="button" class="column">中国大陆</button>
+  <button type="button" class="column">Hong Kong 香港</button>
+  <button type="button" class="column">Indonesia</button>
+  <button type="button" class="column">日本</button>
+  <button type="button" class="column">대한민국</button>
+  <button type="button" class="column">澳門</button>
+  <button type="button" class="column">Malaysia</button>
+  <button type="button" class="column">New Zealand</button>
+  <button type="button" class="column">Philippines</button>
+  <button type="button" class="column">Singapore</button>
+  <button type="button" class="column">台灣</button>
+  <button type="button" class="column">ไทย</button>
+  <button type="button" class="column">Vietnam</button>
+</div>
+
+<div id= "row3">
+  <button type="button" class="column">België</button>
+  <button type="button" class="column">България</button>
+  <button type="button" class="column">Česko</button>
+  <button type="button" class="column">Danmark</button>
+  <button type="button" class="column">Deutschland</button>
+  <button type="button" class="column">Eesti</button>
+  <button type="button" class="column">España</button>
+  <button type="button" class="column">France</button>
+  <button type="button" class="column">Ελλάδα</button>
+  <button type="button" class="column">Hrvatska</button>
+  <button type="button" class="column">Ireland</button>
+  <button type="button" class="column">Italia</button>
+  <button type="button" class="column">Latvija</button>
+  <button type="button" class="column">Liechtenstein</button>
+  <button type="button" class="column">Lietuva</button>
+  <button type="button" class="column">Luxembourg</button>
+  <button type="button" class="column">Macedonia</button>
+  <button type="button" class="column">Magyarország</button>
+  <button type="button" class="column">Malta</button>
+  <button type="button" class="column">Moldova</button>
+  <button type="button" class="column">Montenegro</button>
+  <button type="button" class="column">Nederland</button>
+  <button type="button" class="column">Norge</button>
+  <button type="button" class="column">Österreich</button>
+  <button type="button" class="column">Polska</button>
+  <button type="button" class="column">Portugal</button>
+  <button type="button" class="column">România</button>
+  <button type="button" class="column">Россия</button>
+  <button type="button" class="column">Slovensko</button>
+  <button type="button" class="column">Slovenia</button>
+  <button type="button" class="column">Schweiz Suisse</button>
+  <button type="button" class="column">Suomi</button>
+  <button type="button" class="column">Sverige</button>
+  <button type="button" class="column">Türkiye</button>
+  <button type="button" class="column">UK</button>
+</div>
+
+<div id= "row4">
+  <button type="button" class="column">Anguilla</button>
+  <button type="button" class="column">Antigua & Barbuda</button>
+  <button type="button" class="column">Argentina</button>
+  <button type="button" class="column">Barbados</button>
+  <button type="button" class="column">Belize</button>
+  <button type="button" class="column">Bermuda</button>
+  <button type="button" class="column">Bolivia</button>
+  <button type="button" class="column">Brasil</button>
+  <button type="button" class="column">British Virgin Islands</button>
+  <button type="button" class="column">Cayman Islands</button>
+  <button type="button" class="column">Chile</button>
+  <button type="button" class="column">Colombia</button>
+  <button type="button" class="column">Costa Rica</button>
+  <button type="button" class="column">Dominica</button>
+  <button type="button" class="column">República Dominicana</button>
+  <button type="button" class="column">Ecuador</button>
+  <button type="button" class="column">El Salvador</button>
+  <button type="button" class="column">Grenada</button>
+  <button type="button" class="column">Guatemala</button>
+  <button type="button" class="column">Guyana</button>
+  <button type="button" class="column">Honduras</button>
+  <button type="button" class="column">Jamaica</button>
+  <button type="button" class="column">México</button>
+  <button type="button" class="column">Montserrat</button>
+  <button type="button" class="column">Nicaragua</button>
+  <button type="button" class="column">Panamá</button>
+  <button type="button" class="column">Paraguay</button>
+  <button type="button" class="column">Perú</button>
+  <button type="button" class="column">St. Kitts & Nevis</button>
+  <button type="button" class="column">St. Lucia</button>
+  <button type="button" class="column">St. Vincent & The Grenadines</button>
+  <button type="button" class="column">Suriname</button>
+  <button type="button" class="column">The Bahamas</button>
+  <button type="button" class="column">Trinidad & Tobago</button>
+  <button type="button" class="column">Turks & Caicos</button>
+  <button type="button" class="column">Uruguay</button>
+  <button type="button" class="column">Venezuela</button>
+</div>
+
+<div id= "row5">
+  <button type="button" class="column">Canada</button>
+  <button type="button" class="column">Puerto Rico</button>
+  <button type="button" class="column">United States</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/98/three.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.3/dat.gui.min.js"></script>
+<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
+<script>
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  var renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x1c1b1b);
+  document.body.appendChild(renderer.domElement);
+  window.addEventListener('resize', function () {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  });
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  // create the shape
+  var geometrySphere = new THREE.SphereGeometry(1.6, 20, 20, 0, Math.PI * 2, 0, Math.PI);
+
+  // random color
+  var color;
+  // color = Math.random() * 0xffffff;
+  // create a material, colour or image texture
+  var materialSphere = new THREE.MeshBasicMaterial({
+    color,
+    wireframe: true
+  });
+  var sphere = new THREE.Mesh(geometrySphere, materialSphere);
+  scene.add(sphere);
+  camera.position.z = 3;
+  // Control pan with dat.gui
+  // var Controller = new function(){
+  //   this.Color = color;
+  // }
+  // var gui = new dat.GUI();
+  // var control = gui.addFolder('Control Panel');
+  // control.addColor( Controller, 'Color' ).onChange(function() {
+  //   sphere.material.color.setHex(dec2hex(Controller.Color) );
+  // });
+  // function dec2hex(i) {
+  //   var result = "0x000000";
+  //   if (i >= 0 && i <= 15) { result = "0x00000" + i.toString(16); }
+  //   else if (i >= 16 && i <= 255) { result = "0x0000" + i.toString(16); }
+  //   else if (i >= 256 && i <= 4095) { result = "0x000" + i.toString(16); }
+  //   else if (i >= 4096 && i <= 65535) { result = "0x00" + i.toString(16); }
+  //   else if (i >= 65535 && i <= 1048575) { result = "0x0" + i.toString(16); }
+  //   else if (i >= 1048575 ) { result = '0x' + i.toString(16); }
+  //   if (result.length == 8){return result;}
+  // }
+  // game logic
+  var update = function () {
+    sphere.rotation.x += 0.005;
+    sphere.rotation.y += 0.0005;
+  };
+  // draw scene
+  var render = function () {
+    renderer.render(scene, camera);
+    camera.updateMatrixWorld();
+  };
+  // run game loog (update, render, repeat)
+  var GameLoop = function () {
+    requestAnimationFrame(GameLoop);
+    update();
+    render();
+  };
+  GameLoop();
+</script>
+</script>
+</body>
+</html>
