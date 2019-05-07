@@ -85,8 +85,8 @@
 		"Pakistan"
 	],
 	"China": [
-		"Beijing",
-		"Beijing",
+		"Shanghai",
+		"Shanghai",
 		"China"
 	],
 	"Kazakhstan": [
@@ -323,5 +323,75 @@
 		"Toronto",
 		"Ontario", 
 		"Canada" 
+	],
+	"South Africa": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Namibia": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Zambia": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Papua New Guinea": [
+		"Jakarta",
+		"Jakarta",
+		"Indonesia"
+	],
+	"Jamaica": [
+		"Jakarta",
+		"Jakarta",
+		"Indonesia"
+	],
+	"Denmark": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	],
+	"Kenya": [
+		"Shanghai",
+		"Shanghai",
+		"China"
+	],
+	"Turkmenistan": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Oman": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"New Caledonia": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Tajikistan": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Iraq": [
+		"Shanghai",
+		"Shanghai",
+		"China"
+	],
+	"Guyana": [
+		"Santiago",
+		"Santiago Metropolitan",
+		"Chile"
+	],
+	"Suriname": [
+		"Santiago",
+		"Santiago Metropolitan",
+		"Chile"	
 	]
 }

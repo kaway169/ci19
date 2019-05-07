@@ -69,8 +69,8 @@ var cityJson;
 
 $.getJSON('cities.json', function (json) {
   // body...
-  console.log('hello')
-  console.log(json); 
+  // console.log('hello')
+  // console.log(json); 
   cityJson = json;
 });
 
@@ -90,7 +90,7 @@ function enter(country) {
   var city = cityJson[country.name][0]; 
   var state = cityJson[country.name][1];
   var country = cityJson[country.name][2];
-  console.log(city);
+  // console.log(city);
 
 
 
