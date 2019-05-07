@@ -1,0 +1,327 @@
+{
+	"United States": [
+		"Austin",
+		"Texas",
+		"USA"
+	], 
+	"Canada": [
+		"Toronto",
+		"Ontario", 
+		"Canada"  
+	],
+	"Colombia": [
+		"Medellin",
+		"Antioquia",
+		"Colombia"
+	], 
+	"Korea, Republic of": [
+		"Seoul",
+		"Seoul",
+		"South Korea"
+	], 
+	"Mexico": [
+		"Mexico City",
+		"Mexico City",
+		"Mexico"
+	], 
+	"Malaysia": [
+		"Kuala Lumpur",
+		"Kuala Lumpur",
+		"Malaysia"
+	],
+	"Australia": [
+		"Sydney",
+		"New South Wales",
+		"Australia"
+	],
+	"France": [
+		"Paris",
+		"Île-de-France",
+		"France"
+	],
+	"Chile": [
+		"Santiago",
+		"Santiago Metropolitan",
+		"Chile"
+	],
+	"Peru": [
+		"Lima",
+		"Lima",
+		"Peru"
+	],
+	"Singapore": [
+		"Singapore",
+		"Singapore",
+		"Singapore"
+	],
+	"Thailand": [
+		"Chiang Mai",
+		"Chiang Mai",
+		"Thailand"
+	],
+	"Japan": [
+		"Tokyo",
+		"Tokyo",
+		"Japan"
+	],
+	"Viet Nam": [
+		"Hanoi",
+		"Hanoi",
+		"Vietnam"
+	],
+	"Cambodia": [
+		"Phnom Penh",
+		"Phnom Penh",
+		"Cambodia"
+	],
+	"Turkey": [
+		"Ankara",
+		"Ankara",
+		"Turkey"
+	], 
+	"Pakistan": [
+		"Islamabad",
+		"Islamabad",
+		"Pakistan"
+	],
+	"China": [
+		"Beijing",
+		"Beijing",
+		"China"
+	],
+	"Kazakhstan": [
+		"Almaty",
+		"Almaty",
+		"Kazakhstan"
+	],
+	"Portugal": [
+		"Lisbon",
+		"Lisbon",
+		"Portugal"
+	],
+	"Slovakia": [
+		"Bratislava",
+		"Bratislava",
+		"Slovakia"
+	],
+	"Italy": [
+		"Venice",
+		"Veneto",
+		"Italy"
+	],
+	"Russian Federation": [
+		"Moscow",
+		"Moscow", 
+		"Russia"  
+	],
+	"Iran, Islamic Republic of": [
+		"Tehran",
+		"Tehran",
+		"Iran"
+	],
+	"Mongolia": [
+		"Ulaanbaatar",
+		"Ulaanbaatar",
+		"Mongolia"
+	],
+	"Germany": [
+		"Munich",
+		"Bavaria",
+		"Germany"
+	],
+	"Greece": [
+		"Athens",
+		"Attica",
+		"Greece"
+	],
+	"Norway": [
+		"Bergen",
+		"Hordaland",
+		"Norway"
+	],
+	"Indonesia": [
+		"Jakarta",
+		"Jakarta",
+		"Indonesia"
+	],
+	"Sweden": [
+		"Stockholm",
+		"Stockholm",
+		"Sweden"
+	],
+	"Finland": [
+		"Helsinki",
+		"Uusimaa",
+		"Finland"
+	],
+	"Lithuania": [
+		"Kaunas",
+		"Kaunas",
+		"Lithuania"
+	],
+	"India": [
+		"Mumbai",
+		"Maharashtra",
+		"India"
+	], 
+	"Portugal": [
+		"Lisbon",
+		"Lisbon",
+		"Portugal"
+	], 
+	"Hungary": [
+		"Budapest",
+		"Central Hungary",
+		"Hungary"
+	], 
+	"Austria": [
+		"Vienna",
+		"Vienna",
+		"Austria"
+	], 
+	"Spain": [
+		"Madrid",
+		"Madrid",
+		"Spain"
+	], 
+	"Myanmar": [
+		"Yangon",
+		"Yangon",
+		"Myanmar"
+	], 
+	"Bulgaria": [
+		"Plovdiv",
+		"Plovdiv",
+		"Bulgaria"
+	], 
+	"Netherlands": [
+		"Amsterdam",
+		"North Holland",
+		"Netherlands"
+	], 
+	"Switzerland": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Taiwan, Province of China": [
+		"Taipei",
+		"Taipei",
+		"Taiwan"
+	],
+	"Mali": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Egypt": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Chad": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Congo, the Democratic Republic of the": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Libya": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Ethiopia": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"Zimbabwe": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"Madagascar": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"Somalia": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"South Sudan": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"Saudi Arabia": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Cuba": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Haiti": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	], 
+	"Dominican Republic": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"Ecuador": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"United Kingdom": [
+		"Beijing",
+		"Beijing",
+		"China"
+	], 
+	"Ireland": [
+		"Bern",
+		"Bern",
+		"Switzerland"
+	],
+	"Burkina Faso": [
+		"Mumbai",
+		"Maharashtra",
+		"India"
+	], 
+	"Ghana": [
+		"Mumbai",
+		"Maharashtra",
+		"India"
+	], 
+	"New Zealand": [
+		"Mumbai",
+		"Maharashtra",
+		"India"
+	], 
+	"Sri Lanka": [
+		"Mumbai",
+		"Maharashtra",
+		"India"
+	], 
+	"Greenland": [
+		"Toronto",
+		"Ontario", 
+		"Canada" 
+	], 
+	"Iceland": [
+		"Toronto",
+		"Ontario", 
+		"Canada" 
+	]
+}
