@@ -40,7 +40,7 @@ h2:hover{
 	position: relative;
 	z-index: 4;
 	top: -9vh;
-	left: 57vw;
+	left: 67vw;
 	font-size: 15px;
 	border: none;
 	outline: thin;
@@ -55,6 +55,16 @@ h2:hover{
 	left: 5vw;
 	width: 250px;
 	border:solid thick black;
+}
+#year{
+	top: -14vh;
+	left: 57vw;
+
+}
+#movie{
+	top: -14vh;
+	left: 57vw;
+
 }
 </style>
 <body>
@@ -300,12 +310,13 @@ document.getElementById('year').addEventListener('click', function(e){
 	//loop thru and set display to none
 	for(var i = 0; i < allArray.length; i++) {
 		var el = allArray[i];
-		el.style.fontWeight = "none";
+		el.style.color = "black";
 	}
 
 	var yearArray = document.getElementsByClassName('year');
 	for(var i = 0; i < yearArray.length; i++) {
 		var el = yearArray[i];
+		el.style.color = "red";
 		el.style.fontWeight = "bold";
 	}
 });
@@ -319,12 +330,13 @@ document.getElementById('movie').addEventListener('click', function(e){
 	//loop thru and set display to none
 	for(var i = 0; i < allArray.length; i++) {
 		var el = allArray[i];
-		el.style.fontWeight = "none";
+		el.style.color = "none";
 	}
 
 	var movieArray = document.getElementsByClassName('movie');
 	for(var i = 0; i < movieArray.length; i++) {
 		var el = movieArray[i];
+		el.style.color = "red";
 		el.style.fontWeight = "bold";
 	}
 });

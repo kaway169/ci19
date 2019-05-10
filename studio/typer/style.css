@@ -38,6 +38,6 @@
   color: aqua;
   word-wrap: break-word;
   text-align: center;
-}
-.inner {
+  letter-spacing: 0.08em;
+  font-family: monospace;
 }
