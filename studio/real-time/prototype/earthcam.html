@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+var myHeaders = new Headers();
+myHeaders.append('X-RapidAPI-Host', 'webcamstravel.p.rapidapi.com');
+myHeaders.append('X-RapidAPI-Key', '1af287434bmsh8cd9e4f0bbe7b24p1cdc36jsn6f6129436a1b');
+
+var myInit = { method: 'GET',
+               headers: myHeaders};
+
+var myRequest = new Request("https://webcamstravel.p.rapidapi.com/webcams/list/country=US?lang=en&show=webcams%3Aimage%2Clocation", myInit);
+
+fetch(myRequest)
+.then(function(response){return response.json();})
+.then(function(json){ callAPI(json); })
+
+function callAPI(data) {
+	console.log(data);
+	for(var i = 0; i < data.result.webcams.length; i = i + 1){
+		var image = document.createElement("img");
+		// console.log(data);
+		// var webcams = document.createElement("div");
+		// webcams.innerHTML = data.result.webcams;
+		image.setAttribute ("src", data.result.webcams[i].image.current.preview);
+		document.body.appendChild(image);
+		
+		// image.appendChild(webcams);
+		// var image = document.createelement("img");
+		// image.setAttribute ("src", data[i].url);
+		// document.body.appendChild(image);
+
+}
+
+}
+</script>
+</body>
+</html>

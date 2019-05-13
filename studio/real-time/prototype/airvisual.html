@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Shanghai&state=Shanghai&country=China&key=eM5YcDp3srtFtZxHR";
+
+fetch(url)
+	.then(function(response){return response.json();})
+	// .then(function(json){ console.log(json); })
+	.then(function(json){ callAPI(json); })
+
+function callAPI(json) {
+		console.log(json);
+
+		var pollutiondiv = document.createElement("div");
+		var country = document.createElement("div");
+		country.innerHTML = json.data.current.pollution.aqicn;
+
+		pollutiondiv.appendChild(country);
+
+		document.body.appendChild(pollutiondiv);
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,4422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+html,body{
+	
+}
+button{
+	top:10%;
+	left:0;
+	border: none;
+	position: relative;
+	z-index:1000000;
+/*}.btn{
+	display: center;
+	position: relative;
+	width: 50vw;
+}*/
+
+</style>
+<body>
+<div id="myBtnContainer">
+  <button id ="Japan" class="btn" onclick="callAPI()">Japan</button>
+  <button id ="USA" class="btn" onclick="callAPI1()">United States</button>
+  <button id ="Canada" class="btn" onclick="callAPI2()">Canada</button>
+  <button id ="Colombia" class="btn" onclick="callAPI3()">Colombia</button>
+  <button id ="Korea" class="btn" onclick="callAPI4()">South Korea</button>
+  <button id ="Mexico" class="btn" onclick="callAPI5()">Mexico</button>
+  <button id ="Malaysia" class="btn" onclick="callAPI6()">Malaysia</button>
+  <button id ="Australia" class="btn" onclick="callAPI7()">Australia</button>
+  <button id ="France" class="btn" onclick="callAPI8()">France</button>
+  <button id ="Chile" class="btn" onclick="callAPI9()">Chile</button>
+  <button id ="Peru" class="btn" onclick="callAPI10()">Peru</button>
+  <button id ="Singapore" class="btn" onclick="callAPI11()">Singapore</button>
+  <button id ="Thailand" class="btn" onclick="callAPI12()">Thailand</button>
+  <button id ="Vietnam" class="btn" onclick="callAPI13()">Vietnam</button>
+  <button id ="Cambodia" class="btn" onclick="callAPI14()">Cambodia</button>
+  <button id ="Turkey" class="btn" onclick="callAPI15()">Turkey</button>
+  <button id ="Pakistan" class="btn" onclick="callAPI16()">Pakistan</button>
+  <button id ="China" class="btn" onclick="callAPI17()">China</button>
+  <button id ="Kazakhstan" class="btn" onclick="callAPI18()">Kazakhstan</button>
+  <button id ="Portugal" class="btn" onclick="callAPI19()">Portugal</button>
+  <button id ="Slovakia" class="btn" onclick="callAPI20()">Slovakia</button>
+  <button id ="Italy" class="btn" onclick="callAPI21()">Italy</button>
+  <button id ="Russia" class="btn" onclick="callAPI22()">Russia</button>
+  <button id ="Iran" class="btn" onclick="callAPI23()">Iran</button>
+  <button id ="Mongolia" class="btn" onclick="callAPI24()">Mongolia</button>
+  <button id ="Germany" class="btn" onclick="callAPI25()">Germany</button>
+  <button id ="Greece" class="btn" onclick="callAPI26()">Greece</button>
+  <button id ="Norway" class="btn" onclick="callAPI27()">Norway</button>
+  <button id ="Indonesia" class="btn" onclick="callAPI28()">Indonesia</button>
+  <button id ="Sweden" class="btn" onclick="callAPI29()">Sweden</button>
+  <button id ="Finland" class="btn" onclick="callAPI30()">Finland</button>
+  <button id ="Lithuania" class="btn" onclick="callAPI31()">Lithuania</button>
+  <button id ="India" class="btn" onclick="callAPI32()">India</button>
+  <button id ="Hungary" class="btn" onclick="callAPI33()">Hungary</button>
+  <button id ="Austria" class="btn" onclick="callAPI34()">Austria</button>
+  <button id ="Spain" class="btn" onclick="callAPI35()">Spain</button>
+  <button id ="Myanmar" class="btn" onclick="callAPI36()">Myanmar</button>
+  <button id ="Bulgaria" class="btn" onclick="callAPI37()">Bulgaria</button>
+  <button id ="Netherlands" class="btn" onclick="callAPI38()">Netherlands</button>
+  <button id ="Switzerland" class="btn" onclick="callAPI39()">Switzerland</button>
+  <button id ="Taiwan" class="btn" onclick="callAPI40()">Taiwan</button>
+</div>
+<!-- <div id="distortion-text"></div> -->
+<script src ="build/blotter.min.js"></script>
+<script src ="build/materials/channelSplitMaterial.js"></script>
+<script src ="jquery.min.js"></script>
+<script>
+
+//JAPAN
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Tokyo&state=Tokyo&country=Japan&key=gHrh7maPAPD7TNjRE";
+// document.getElementById("Japan").addEventListener("click", callAPI());
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI(json); })
+
+function callAPI(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Japan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Japan");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Japan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Japan");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Japan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Japan");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Japan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Japan");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Japan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Japan");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Japan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Japan");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+
+//United States
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Austin&state=Texas&country=USA&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI1(json); })
+
+function callAPI1(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("USA", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("USA");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("USA", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("USA");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("USA", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("USA");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("USA", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("USA");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("USA", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("USA");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("USA", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("USA");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Canada
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Toronto&state=Ontario&country=Canada&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI2(json); })
+
+function callAPI2(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Canada", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Canada");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Canada", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Canada");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Canada", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Canada");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Canada", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Canada");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Canada", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Canada");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Canada", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Canada");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Colombia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Medellin&state=Antioquia&country=Colombia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI3(json); })
+
+function callAPI3(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Colombia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Colombia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Colombia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Colombia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Colombia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Colombia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Colombia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Colombia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Colombia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Colombia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Colombia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Colombia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//KOREA
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Seoul&state=Seoul&country=South%20Korea&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI4(json); })
+
+function callAPI4(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("S.Korea", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Korea");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("S.Korea", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Korea");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("S.Korea", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Korea");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("S.Korea", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Korea");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("S.Korea", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Korea");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("S.Korea", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Korea");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Mexico
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Mexico%20City&state=Mexico%20City&country=Mexico&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI5(json); })
+
+function callAPI5(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Mexico", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Mexico", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Mexico", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Mexico", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Mexico", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Mexico", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Malaysia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Kuala%20Lumpur&state=Kuala%20Lumpur&country=Malaysia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI6(json); })
+
+function callAPI6(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Malaysia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Malaysia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Malaysia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Malaysia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Malaysia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Malaysia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Malaysia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Malaysia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Malaysia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Malaysia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Malaysia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Malaysia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Australia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Sydney&state=New%20South%20Wales&country=Australia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI7(json); })
+
+function callAPI7(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Australia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Australia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Australia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Australia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Australia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Australia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Australia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Australia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Australia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Australia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Australia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Australia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//France
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Paris&state=Île-de-France&country=France&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI8(json); })
+
+function callAPI8(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("France", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("France");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("France", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("France");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("France", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("France");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("France", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("France");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("France", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("France");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("France", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("France");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Chile
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Santiago&state=Santiago%20Metropolitan&country=Chile&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI9(json); })
+
+function callAPI9(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Chile", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Chile");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Chile", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Chile");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Chile", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Chile");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Chile", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Chile");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Chile", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Chile");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Chile", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Chile");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Peru
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Lima&state=Lima&country=Peru&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI10(json); })
+
+function callAPI10(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Peru", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Peru");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Peru", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Peru");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Peru", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Peru");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Peru", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Peru");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Peru", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Peru");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Peru", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Peru");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Singapore
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Singapore&state=Singapore&country=Singapore&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI11(json); })
+
+function callAPI11(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Singapore", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Singapore");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Singapore", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Singapore");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Singapore", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Singapore");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Singapore", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Singapore");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Singapore", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Singapore");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Singapore", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Singapore");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Thailand
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Chiang%20Mai&state=Chiang%20Mai&country=Thailand&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI12(json); })
+
+function callAPI12(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Thailand", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Thailand");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Thailand", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Thailand");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Thailand", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Thailand");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Thailand", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Thailand");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Thailand", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Thailand");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Thailand", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Thailand");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Vietnam
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Hanoi&state=Hanoi&country=Vietnam&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI13(json); })
+
+function callAPI13(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Vietnam", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Vietnam");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Vietnam", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Vietnam");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Vietnam", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Vietnam");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Vietnam", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Vietnam");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Vietnam", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Vietnam");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Vietnam", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Vietnam");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Cambodia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Phnom%20Penh&state=Phnom%20Penh&country=Cambodia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI14(json); })
+
+function callAPI14(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Cambodia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Cambodia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Cambodia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Cambodia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Cambodia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Cambodia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Cambodia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Cambodia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Cambodia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Cambodia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Cambodia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Cambodia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Turkey
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Ankara&state=Ankara&country=Turkey&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI15(json); })
+
+function callAPI15(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Turkey", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Turkey");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Turkey", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Turkey");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Turkey", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Turkey");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Turkey", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Turkey");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Turkey", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Turkey");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Turkey", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Turkey");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Pakistan
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Islamabad&state=Islamabad&country=Pakistan&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI16(json); })
+
+function callAPI16(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Pakistan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Pakistan");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Pakistan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Pakistan");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Pakistan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Pakistan");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Pakistan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Pakistan");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Pakistan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Pakistan");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Pakistan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Pakistan");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//China
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Shanghai&state=Shanghai&country=China&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI17(json); })
+
+function callAPI17(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("China", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("China");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("China", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("China");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("China", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("China");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("China", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("China");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("China", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("China");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("China", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("China");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Kazakhstan
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Almaty&state=Almaty&country=Kazakhstan&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI18(json); })
+
+function callAPI18(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Kazakhstan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Kazakhstan");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Kazakhstan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Kazakhstan");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Kazakhstan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Kazakhstan");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Kazakhstan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Kazakhstan");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Kazakhstan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Kazakhstan");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Kazakhstan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Kazakhstan");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Portugal
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Lisbon&state=Lisbon&country=Portugal&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI19(json); })
+
+function callAPI19(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Portugal", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Portugal");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Portugal", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Portugal");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Portugal", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Portugal");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Portugal", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Portugal");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Portugal", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Portugal");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Portugal", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Portugal");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+
+//Slovakia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Bratislava&state=Bratislava&country=Slovakia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI20(json); })
+
+function callAPI20(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Slovakia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Slovakia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Slovakia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Slovakia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Slovakia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Slovakia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Slovakia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Slovakia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Slovakia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Slovakia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Slovakia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Slovakia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Italy
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Venice&state=Veneto&country=Italy&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI21(json); })
+
+function callAPI21(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Italy", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Italy");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Italy", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Italy");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Italy", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Italy");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Italy", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Italy");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Italy", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Italy");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Italy", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Italy");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Russia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Moscow&state=Moscow&country=Russia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI22(json); })
+
+function callAPI22(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Russia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Russia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Russia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Russia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Russia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Russia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Russia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Russia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Russia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Russia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Russia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Russia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Iran
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Tehran&state=Tehran&country=Iran&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI23(json); })
+
+function callAPI23(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Iran", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Iran");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Iran", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Iran");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Iran", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Iran");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Iran", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Iran");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Iran", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Iran");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Iran", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Iran");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Mongolia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Ulaanbaatar&state=Ulaanbaatar&country=Mongolia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI24(json); })
+
+function callAPI24(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Mongolia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mongolia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Mongolia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mongolia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Mongolia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mongolia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Mongolia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mongolia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Mongolia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mongolia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Mongolia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Mexico");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Germany
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Munich&state=Bavaria&country=Germany&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI25(json); })
+
+function callAPI25(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Germany", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Germany");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Germany", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Germany");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Germany", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Germany");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Germany", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Germany");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Germany", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Germany");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Germany", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Germany");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Greece
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Athens&state=Attica&country=Greece&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI26(json); })
+
+function callAPI26(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Greece", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Greece");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Greece", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Greece");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Greece", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Greece");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Greece", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Greece");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Greece", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Greece");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Greece", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Greece");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Norway
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Bergen&state=Hordaland&country=Norway&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI27(json); })
+
+function callAPI27(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Norway", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Norway");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Norway", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Norway");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Norway", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Norway");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Norway", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Norway");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Norway", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Norway");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Norway", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Norway");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Indonesia
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Jakarta&state=Jakarta&country=Indonesia&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI28(json); })
+
+function callAPI28(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Indonesia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Indonesia");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Indonesia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Indonesia");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Indonesia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Indonesia");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Indonesia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Indonesia");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Indonesia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Indonesia");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Indonesia", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Indonesia");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Sweden
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Stockholm&state=Stockholm&country=Sweden&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI29(json); })
+
+function callAPI29(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Sweden", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Sweden");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Sweden", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Sweden");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Sweden", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Sweden");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Sweden", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Sweden");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Sweden", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Sweden");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Sweden", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Sweden");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Finland
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Helsinki&state=Uusimaa&country=Finland&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI30(json); })
+
+function callAPI30(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Finland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Finland");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Finland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Finland");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Finland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Finland");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Finland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Finland");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Finland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Finland");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Finland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Finland");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Lithuania
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Kaunas&state=Kaunas&country=Lithuania&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI31(json); })
+
+function callAPI31(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Lithuania", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Lithuania");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Lithuania", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Lithuania");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Lithuania", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Lithuania");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Lithuania", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Lithuania");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Lithuania", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Lithuania");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Lithuania", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Lithuania");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//India
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Mumbai&state=Maharashtra&country=India&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI32(json); })
+
+function callAPI32(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("India", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("India");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("India", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("India");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("India", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("India");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("India", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("India");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("India", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("India");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("India", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("India");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Hungary
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Budapest&state=Central%20Hungary&country=Hungary&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI33(json); })
+
+function callAPI33(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Hungary", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Hungary");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Hungary", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Hungary");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Hungary", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Hungary");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Hungary", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Hungary");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Hungary", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Hungary");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Hungary", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Hungary");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Austria
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Vienna&state=Vienna&country=Austria&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI34(json); })
+
+function callAPI34(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Austria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Austria");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Austria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Austria");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Austria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Austria");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Austria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Austria");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Austria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Austria");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Austria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Austria");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Spain
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Madrid&state=Madrid&country=Spain&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI35(json); })
+
+function callAPI35(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Spain", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Spain");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Spain", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Spain");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Spain", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Spain");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Spain", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Spain");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Spain", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Spain");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Spain", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Spain");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Myanmar
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Yangon&state=Yangon&country=Myanmar&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI36(json); })
+
+function callAPI36(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Myanmar", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Myanmar");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Myanmar", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Myanmar");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Myanmar", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Myanmar");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Myanmar", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Myanmar");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Myanmar", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Myanmar");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Myanmar", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Myanmar");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Bulgaria
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Plovdiv&state=Plovdiv&country=Bulgaria&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI37(json); })
+
+function callAPI37(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Bulgaria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Bulgaria");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Bulgaria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Bulgaria");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Bulgaria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Bulgaria");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Bulgaria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Bulgaria");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Bulgaria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Bulgaria");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Bulgaria", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Bulgaria");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Netherlands
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Amsterdam&state=North%20Holland&country=Netherlands&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI38(json); })
+
+function callAPI38(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Netherlands", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Netherlands");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Netherlands", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Netherlands");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Netherlands", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Netherlands");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Netherlands", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Netherlands");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Netherlands", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Netherlands");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Netherlands", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Netherlands");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Switzerland
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Bern&state=Bern&country=Switzerland&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI39(json); })
+
+function callAPI39(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Switzerland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Switzerland");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Switzerland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Switzerland");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Switzerland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Switzerland");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Switzerland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Switzerland");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Switzerland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Switzerland");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Switzerland", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Switzerland");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+
+//Taiwan
+var url = "https://cors.io/?http://api.airvisual.com/v2/city?city=Taipei&state=Taipei&country=Taiwan&key=gHrh7maPAPD7TNjRE";
+
+fetch(url)
+  .then(function(response){return response.json();})
+  .then(function(json){ callAPI40(json); })
+
+function callAPI40(json) {
+console.log(json);
+console.log(pollutionNum);
+var pollutionNum = json.data.current.pollution.aqius;
+
+if(pollutionNum < 50) {
+	var text = new Blotter.Text("Taiwan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.01;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Taiwan");
+	var scope = blotter.forText(text);
+}else if (51< pollutionNum<100){
+	var text = new Blotter.Text("Taiwan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.03;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Taiwan");
+	var scope = blotter.forText(text);
+}else if (101 < pollutionNum < 150){
+	var text = new Blotter.Text("Taiwan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.1;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Taiwan");
+	var scope = blotter.forText(text);
+}else if (151 < pollutionNum < 200){
+	var text = new Blotter.Text("Taiwan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.3;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Taiwan");
+	var scope = blotter.forText(text);
+}else if (201 < pollutionNum < 300){
+	var text = new Blotter.Text("Taiwan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.5;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Taiwan");
+	var scope = blotter.forText(text);
+}else{
+	var text = new Blotter.Text("Taiwan", {
+	  family : "'EB Garamond', serif",
+	  size : 300,
+	  paddingLeft : 0,
+	  paddingRight : 0,
+	});
+	
+	var material = new Blotter.ChannelSplitMaterial();
+	material.uniforms.uOffset.value = 0.7;
+	
+	var blotter = new Blotter(material, {texts : text});
+	
+	var elem = document.getElementById("Taiwan");
+	var scope = blotter.forText(text);
+}
+scope.appendTo(elem);
+}
+</script>
+</body>
+</html>
