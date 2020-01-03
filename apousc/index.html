@@ -60,11 +60,11 @@ body{
  transform: translateY(0vmin); 
  }
 }
-a{
+.apohomepage{
 	display: inline-block;
 	position: absolute;
 	top: 12vmin;
-    left: 197vmin;
+  left: 196.7vmin;
 }
 #apohomepage{
     display: absolute;
@@ -79,6 +79,46 @@ a{
 	-webkit-animation-duration: 5s;
 	animation-name: schedule;
 	animation-duration: 5s;
+}
+.apoinstagram{
+  display: inline-block;
+  position: absolute;
+  top: 21.7vmin;
+  left: 196vmin;
+}
+#apoinstagram{
+    display: absolute;
+    width: 10vmin;
+    height: 10vmin;
+    margin-top: -10vmin;
+    margin-left: 1vmin;
+    background-size: auto 7vmin;
+    background-image: url(images/instagram1.png);
+    background-repeat: no-repeat;
+    -webkit-animation-name: schedule;
+    -webkit-animation-duration: 5s;
+    animation-name: schedule;
+    animation-duration: 5s;
+}
+.apofacebook{
+  display: inline-block;
+  position: absolute;
+  top: 30vmin;
+  left: 196.3vmin;
+}
+#apofacebook{
+    display: absolute;
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: -10vmin;
+    margin-left: 1vmin;
+    background-size: auto 6.5vmin;
+    background-image: url(images/facebook1.png);
+    background-repeat: no-repeat;
+    -webkit-animation-name: schedule;
+    -webkit-animation-duration: 5s;
+    animation-name: schedule;
+    animation-duration: 5s;
 }
 @keyframes schedule {
  0%   { 
@@ -148,8 +188,8 @@ body{
 a{
 	display: inline-block;
 	position: absolute;
-	top: 200vmin;
-    left: 60vmin;
+	top: 220vmin;
+  left: 63vmin;
 }
 #apohomepage{
     display: absolute;
@@ -157,8 +197,48 @@ a{
     height: 30vmin;
     margin-top: -10vmin;
     margin-left: 1vmin;
-    background-size: auto 30vmin;
+    background-size: auto 20vmin;
     background-image: url(images/homepage.png);
+    background-repeat: no-repeat;
+    -webkit-animation-name: schedule;
+    -webkit-animation-duration: 5s;
+    animation-name: schedule;
+    animation-duration: 5s;
+}
+.apoinstagram{
+  display: inline-block;
+  position: absolute;
+  top: 224.3vmin;
+  left: 92vmin;
+}
+#apoinstagram{
+    display: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    margin-top: -10vmin;
+    margin-left: 1vmin;
+    background-size: auto 20vmin;
+    background-image: url(images/instagram.png);
+    background-repeat: no-repeat;
+    -webkit-animation-name: schedule;
+    -webkit-animation-duration: 5s;
+    animation-name: schedule;
+    animation-duration: 5s;
+}
+.apofacebook{
+  display: inline-block;
+  position: absolute;
+  top: 219vmin;
+  left: 23.3vmin;
+}
+#apofacebook{
+    display: absolute;
+    width: 40vmin;
+    height: 40vmin;
+    margin-top: -10vmin;
+    margin-left: 1vmin;
+    background-size: auto 29vmin;
+    background-image: url(images/facebook.png);
     background-repeat: no-repeat;
     -webkit-animation-name: schedule;
     -webkit-animation-duration: 5s;
@@ -184,9 +264,19 @@ a{
 <div class="background">
 </div>
 <nav>
-	<a href="http://www.apousc.org/main/">
+	<a href="http://www.apousc.org/main/" class="apohomepage">
 	<div id="apohomepage">	
 	</div></a>
+</nav>
+<nav>
+  <a href="https://www.instagram.com/apousc/" class="apoinstagram">
+  <div id="apoinstagram">  
+  </div></a>
+</nav>
+<nav>
+  <a href="https://www.facebook.com/apousc/" class="apofacebook">
+  <div id="apofacebook">  
+  </div></a>
 </nav>
 </body>
 </html>
