@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>APO SPRING 2020</title>
+</head>
+<style>
+@media (hover) and (min-width: 1000px) {
+/*desktop*/
+body{
+	position:relative;
+	margin:0;
+	background: linear-gradient(141deg, #ffb3b3 0%, #ccd9ff 75%);
+	}
+#schedulepic{
+  position: absolute;
+  top: 60vmin;
+  left: 90vmin;
+  -webkit-animation-name: schedule;
+  -webkit-animation-duration: 5s;
+  animation-name: schedule;
+  animation-duration: 5s;
+  z-index:100000;
+}
+#title{
+	position: absolute;
+	top: 40vmin;
+	left: 60vmin;
+	-webkit-animation-name: schedule;
+	-webkit-animation-duration: 5s;
+	animation-name: schedule;
+	animation-duration: 5s;
+	z-index:100000;
+}
+.marioslide1 {
+ height: 100vmin;
+ width: 150vmin;	
+ overflow: hidden;
+ position: relative;
+  -webkit-animation-name: schedule;
+ -webkit-animation-duration: 5s;
+ animation-name: schedule;
+ animation-duration: 5s;
+}
+.marioslide1 img {
+ position: relative;
+ left: 50vmin;
+ height: 100vmin;
+ margin: 0;
+ text-align: center;
+ /* Starting position */	
+ transform:translateY(0%);
+ /* Apply animation to this element */	
+ animation: marioslide1 3s linear;
+}
+@keyframes marioslide1 {
+ 0%   { 
+ transform: translateY(-100%); 		
+ }
+ 100% { 
+ transform: translateY(0vmin); 
+ }
+}
+a{
+	display: inline-block;
+	position: absolute;
+	top: 12vmin;
+    left: 197vmin;
+}
+#apohomepage{
+    display: absolute;
+    width: 10vmin;
+    height: 10vmin;
+    margin-top: -10vmin;
+    margin-left: 1vmin;
+    background-size: auto 8vmin;
+    background-image: url(images/homepage.png);
+    background-repeat: no-repeat;
+    -webkit-animation-name: schedule;
+	-webkit-animation-duration: 5s;
+	animation-name: schedule;
+	animation-duration: 5s;
+}
+@keyframes schedule {
+ 0%   { 
+ opacity: 0%;}
+ 100% { 
+ opacity: 100%;}
+}
+}
+@media not all and (hover){
+/*phone*/
+body{
+	position: relative;
+	margin:0;
+	background: linear-gradient(180deg, #ffb3b3 0%, #ccd9ff 75%);
+	}
+.schedulepicmobile{
+  position: absolute;
+  top: 75vh;
+  left: 53vmin;
+  height: 130px;
+  -webkit-animation-name: schedule;
+  -webkit-animation-duration: 5s;
+  animation-name: schedule;
+  animation-duration: 5s;
+  z-index:100000;
+}
+.titlemobile{
+	position: absolute;
+	top: 110vmin;
+	left: 15vmin;
+	height: 200px;
+	-webkit-animation-name: schedule;
+	-webkit-animation-duration: 5s;
+	animation-name: schedule;
+	animation-duration: 5s;
+	z-index:100000;
+}
+.marioslide1 {
+ height: 256vmin;
+ width: 140vmin;	
+ overflow: hidden;
+ position: relative;
+  -webkit-animation-name: schedule;
+ -webkit-animation-duration: 5s;
+ animation-name: schedule;
+ animation-duration: 5s;
+}
+.marioslide1 img {
+ position: relative;
+ left: 20vmin;
+ height: 100vmin;
+ margin: 0;
+ text-align: center;
+ /* Starting position */	
+ transform:translateY(70%);
+ /* Apply animation to this element */	
+ animation: marioslide1 3s linear ;
+}
+@keyframes marioslide1 {
+ 0%   { 
+ transform: translateY(-100%); 		
+ }
+ 100% { 
+ transform: translateY(70vmin); 
+ }
+}
+a{
+	display: inline-block;
+	position: absolute;
+	top: 200vmin;
+    left: 60vmin;
+}
+#apohomepage{
+    display: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    margin-top: -10vmin;
+    margin-left: 1vmin;
+    background-size: auto 30vmin;
+    background-image: url(images/homepage.png);
+    background-repeat: no-repeat;
+    -webkit-animation-name: schedule;
+    -webkit-animation-duration: 5s;
+    animation-name: schedule;
+    animation-duration: 5s;
+}
+@keyframes schedule {
+ 0%   { 
+ opacity: 0%;}
+ 100% { 
+ opacity: 100%;}
+}
+}
+</style>
+<body>
+<span onclick="window.open('images/mario.png')">
+		<img src="images/start.png" id="schedulepic" class="schedulepicmobile">
+	</span>
+<img src="images/title.png" id="title" class="titlemobile">
+<div class="marioslide1">
+<img src="images/jumpingmario.png" id="mario1">
+</div>
+<div class="background">
+</div>
+<nav>
+	<a href="http://www.apousc.org/main/">
+	<div id="apohomepage">	
+	</div></a>
+</nav>
+</body>
+</html>
